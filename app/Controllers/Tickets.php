@@ -44,7 +44,7 @@ class Tickets extends BaseController
         $ticketModel = new Ticket();
 
         // Retrieve all tickets from the database (you can modify the query if needed)
-        $tickets = $ticketModel->orderBy('created_at', 'asc')->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
+        $tickets = $ticketModel->orderBy('created_at', 'desc')->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
 
 
         return view('tickets/view_tickets', ['tickets' => $tickets]);
@@ -79,7 +79,8 @@ class Tickets extends BaseController
             $attachmentPath = 'uploads/tickets/' . $attachment->getName();
 
             // Move the file to the desired location
-            $attachment->move(WRITEPATH . 'uploads/tickets', $attachment->getName());
+            // $attachment->move(WRITEPATH . 'uploads/tickets', $attachment->getName());
+            $attachment->move('uploads/tickets/', $attachment->getName());
         }
 
         $session = session();  // or $this->session if using the Controller class

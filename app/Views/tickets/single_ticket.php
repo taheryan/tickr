@@ -22,6 +22,7 @@
             <p><strong>کاربر ایجاد کننده:</strong> <?= esc($user['username']) ?> (<?= esc($user['role']) ?>)</p>
             <p><strong>ایجاد شده در:</strong> <?= esc($ticket['created_at']) ?></p>
             <p><strong>توضیحات:</strong> <?= esc($ticket['question']) ?></p>
+            <a href="<?= 'http://localhost/tickr/public/' . $ticket['attachment'] ?>"><strong>فایل پیوست شده</strong></a>
         </div>
     </div>
 
