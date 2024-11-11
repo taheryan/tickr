@@ -8,7 +8,7 @@ class Ticket extends Model
 {
     protected $table      = 'tickets';    // The table name
     protected $primaryKey = 'id';         // Primary key
-    protected $allowedFields = ['title', 'question', 'status', 'attachment', 'user_id']; // Fields to be inserted
+    protected $allowedFields = ['title', 'question', 'status', 'department', 'attachment', 'user_id']; // Fields to be inserted
 
     protected $useTimestamps = true;      // Automatically handles created_at and updated_at fields
     protected $createdField  = 'created_at';

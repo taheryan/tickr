@@ -15,7 +15,19 @@
                 <label for="title" class="form-label">موضوع</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="موضوع تیکت خود را وارد کنید" required>
             </div>
+            
+            <!-- Hidden Status Input -->
             <input type="hidden" class="form-control" id="status" name="status" value="open">
+
+            <!-- Department Select Box -->
+            <div class="mb-3">
+                <label for="department" class="form-label">بخش</label>
+                <select class="form-control" id="department" name="department" required>
+                    <option value="فروش">فروش</option>
+                    <option value="پشتیبان فنی">پشتیبان فنی</option>
+                </select>
+            </div>
+
             <!-- Description Input -->
             <div class="mb-3">
                 <label for="question" class="form-label">توضیحات</label>

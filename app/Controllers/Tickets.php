@@ -92,6 +92,7 @@ class Tickets extends BaseController
         $ticketData = [
             'title' => $this->request->getPost('title'),
             'question' => $this->request->getPost('question'),
+            'department' => $this->request->getPost('department'),
             'status' => 'open',  // Assuming the default status is 'open'
             'attachment' => $attachmentPath, // Save the file path
             'user_id' => $userId

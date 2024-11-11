@@ -9,14 +9,11 @@
 <div class="ticket-container">
     <div class="tickets-view-head">
         <div>
-
             <h2 class="page-title">تیکت های شما</h2>
         </div>
         <div>
-
             <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='http://localhost/tickr/public/tickets/NewTicket'">ایجاد تیکت جدید</button>
         </div>
-
     </div>
     <!-- List of Tickets -->
     <div class="ticket-list">
