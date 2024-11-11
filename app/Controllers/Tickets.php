@@ -42,7 +42,7 @@ class Tickets extends BaseController
         $ticketModel = new Ticket();
 
         // Retrieve all tickets from the database (you can modify the query if needed)
-        $tickets = $ticketModel->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
+        $tickets = $ticketModel->orderBy('created_at', 'asc')->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
         
 
         return view('tickets/view_tickets', ['tickets' => $tickets]);
@@ -65,7 +65,7 @@ class Tickets extends BaseController
         //     'attachment' => 'uploaded[attachment]|max_size[attachment,10240]|ext_in[attachment,jpg,jpeg,png,pdf]', // File validation
         // ])) {
         //     // If validation fails, return with error messages
-        //     return redirect()->to('/ticket/create')->withInput()->with('errors', $this->validator->getErrors());
+        //     return redirect()->to('/tickr/create')->withInput()->with('errors', $this->validator->getErrors());
         // }
 
         // Handle the file upload

@@ -10,7 +10,7 @@
     <div class="login-form">
         <h2>ورود کاربر</h2>
         <!-- Change method to POST for secure submission -->
-        <form method="POST" action="http://localhost/ticket/public/auth/login">
+        <form method="POST" action="http://localhost/tickr/public/auth/login">
             <!-- CSRF Protection -->
             <?= csrf_field() ?>
 

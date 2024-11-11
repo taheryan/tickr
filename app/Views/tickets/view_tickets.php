@@ -14,14 +14,14 @@
         </div>
         <div>
 
-            <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='http://localhost/ticket/public/tickets/NewTicket'">ایجاد تیکت جدید</button>
+            <button type="button" class="btn btn-primary mb-3" onclick="window.location.href='http://localhost/tickr/public/tickets/NewTicket'">ایجاد تیکت جدید</button>
         </div>
 
     </div>
     <!-- List of Tickets -->
     <div class="ticket-list">
         <?php foreach ($tickets as $ticket): ?>
-            <div class="ticket-item" onclick="window.location.href='http://localhost/ticket/public/tickets/<?= $ticket['id'] ?>'">
+            <div class="ticket-item" onclick="window.location.href='http://localhost/tickr/public/tickets/<?= $ticket['id'] ?>'">
                 <div class="ticket-title-status-wrap">
 
                     <div class="ticket-title"><?= $ticket['title'] ?></div>

@@ -9,7 +9,7 @@
 <div class="login-container">
     <div class="login-form">
         <h2>ثبت نام کاربر</h2>
-        <form method="POST" action="http://localhost/ticket/public/auth/register">
+        <form method="POST" action="http://localhost/tickr/public/auth/register">
             <!-- Username Input -->
             <div class="mb-3">
                 <label for="username" class="form-label">نام کاربری</label>

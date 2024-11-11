@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <title><?= $this->renderSection('title') ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="http://localhost/ticket/public/style.css" rel="stylesheet">
+    <link href="http://localhost/tickr/public/style.css" rel="stylesheet">
 </head>
 <body>
 
 <header>
     <h1>سامانه پشتیبانی</h1>
     <nav>
-        <a href="http://localhost/ticket/public/tickets">تیکت ها</a> | <a href="/about">درباره ما</a> | <a href="http://localhost/ticket/public/auth/logout">خروج</a>
+        <a href="http://localhost/tickr/public/tickets">تیکت ها</a> | <a href="/about">درباره ما</a> | <a href="http://localhost/tickr/public/auth/logout">خروج</a>
     </nav>
 </header>
 
