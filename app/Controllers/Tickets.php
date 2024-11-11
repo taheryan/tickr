@@ -169,6 +169,23 @@ class Tickets extends BaseController
         ]);
 
         // Redirect to the ticket view page with a success message
-        return redirect()->to('/tickets/view/'.$ticketId)->with('success', 'پاسخ شما با موفقیت ارسال شد.');
+        return redirect()->to('/tickets/view/' . $ticketId)->with('success', 'پاسخ شما با موفقیت ارسال شد.');
+    }
+
+    public function close($ticketId)
+    {
+        $ticketModel = new Ticket();
+
+        // Check if the ticket exists
+        $ticket = $ticketModel->find($ticketId);
+
+        // Update the status to 'Closed'
+        $ticket['status'] = 'Closed'; // Change this value if needed
+
+        // Save the updated ticket
+        $ticketModel->save($ticket);
+
+        // Return a success message
+        return redirect()->to('/tickets')->with('success', 'Ticket closed successfully.');
     }
 }

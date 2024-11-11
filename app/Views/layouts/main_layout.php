@@ -12,7 +12,7 @@
 <header>
     <h1>سامانه پشتیبانی</h1>
     <nav>
-        <a href="http://localhost/tickr/public/tickets">تیکت ها</a> | <a href="/about">درباره ما</a> | <a href="http://localhost/tickr/public/auth/logout">خروج</a>
+        <a href="http://localhost/tickr/public/tickets">تیکت ها</a> | <a href="http://localhost/tickr/public/auth/signup">ثبت نام</a> | <a href="/about">درباره ما</a> | <a href="http://localhost/tickr/public/auth/logout">خروج</a>
     </nav>
 </header>
 

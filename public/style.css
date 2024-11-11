@@ -37,6 +37,12 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+.flexit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Make the design responsive for mobile screens */
 @media (max-width: 768px) {
     header {
