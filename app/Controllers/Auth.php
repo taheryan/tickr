@@ -68,6 +68,7 @@ class Auth extends BaseController
             $session = Services::session();
             $session->set('user_id', $user['id']);
             $session->set('username', $user['username']);
+            $session->set('role', $user['role']);
 
             return redirect()->to('/tickets');
         }

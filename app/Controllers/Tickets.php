@@ -44,7 +44,24 @@ class Tickets extends BaseController
         $ticketModel = new Ticket();
 
         // Retrieve all tickets from the database (you can modify the query if needed)
-        $tickets = $ticketModel->orderBy('status', 'asc')->orderBy('created_at', 'desc')->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
+        // $tickets = $ticketModel->orderBy('status', 'asc')->orderBy('created_at', 'desc')->where('user_id', session()->get('user_id'))->findAll();
+
+        if (session()->get('role') === "مدیر") {
+            $tickets = $ticketModel
+                ->orderBy('status', 'asc')
+                ->orderBy('created_at', 'desc')
+                ->findAll();
+        } else {
+            $tickets = $ticketModel
+                ->orderBy('status', 'asc')
+                ->orderBy('created_at', 'desc')
+                ->groupStart() // Start of the OR group
+                ->where('user_id', session()->get('user_id')) // Condition 1: Check department in session
+                ->orWhere('department', session()->get('role')) // Condition 2: Check department for a specific user (replace 'user' with actual user dept logic)
+                ->groupEnd() // End of the OR group
+                ->findAll();
+        }
+
 
         return view('tickets/view_tickets', ['tickets' => $tickets]);
     }

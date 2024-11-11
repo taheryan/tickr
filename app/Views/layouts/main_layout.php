@@ -12,7 +12,7 @@
 <header>
     <h1>سامانه پشتیبانی</h1>
     <?php if(session()->get('username')): ?>
-    <p>خوش آمدی <?= session()->get('username') ?> جان!
+    <p>خوش آمدی <?= session()->get('username') ?> (<?= session()->get('role') ?>) جان!
     <?php endif; ?>
     <nav>
         <a href="http://localhost/tickr/public/tickets">تیکت ها</a> | <a href="http://localhost/tickr/public/auth/signup">ثبت نام</a> | <a href="/about">درباره ما</a> | <a href="http://localhost/tickr/public/auth/logout">خروج</a>
