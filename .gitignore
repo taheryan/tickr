@@ -1,0 +1,32 @@
+# Ignore application and system cache and log files
+/app/Config/Cache/
+/app/Config/Logs/
+/writable/cache/
+/writable/logs/
+
+/# Ignore environment-specific configuration files
+.env
+.env.*
+
+// Ignore vendor directory (if you are using Composer for dependencies)
+vendor/
+
+# Ignore IDE/editor files
+.idea/
+.vscode/
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Composer lock file (if using Composer for PHP dependencies)
+composer.lock
+
+# Ignore PHPUnit coverage report files (if using PHPUnit)
+coverage/
+
+# Ignore any other unwanted files or directories
+*.bak
+*.tmp
+*.log
