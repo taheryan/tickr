@@ -54,4 +54,10 @@ class User extends Model
     {
         return $this->findAll(); // findAll() fetches all rows from the users table
     }
+
+    // Function to get user by ID
+    public function getUserById($userId)
+    {
+        return $this->where('id', $userId)->first();
+    }
 }

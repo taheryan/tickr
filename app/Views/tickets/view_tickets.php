@@ -21,7 +21,7 @@
     <!-- List of Tickets -->
     <div class="ticket-list">
         <?php foreach ($tickets as $ticket): ?>
-            <div class="ticket-item" onclick="window.location.href='http://localhost/tickr/public/tickets/<?= $ticket['id'] ?>'">
+            <div class="ticket-item" onclick="window.location.href='http://localhost/tickr/public/tickets/view/<?= $ticket['id'] ?>'">
                 <div class="ticket-title-status-wrap">
 
                     <div class="ticket-title"><?= $ticket['title'] ?></div>

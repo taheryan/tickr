@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Ticket;
+use App\Models\User;
 
 class Tickets extends BaseController
 {
@@ -100,5 +101,39 @@ class Tickets extends BaseController
 
         // Redirect to a success page or back to the ticket list
         return redirect()->to('/tickets')->with('success', 'Ticket created successfully!');
+    }
+
+    public function view($ticketId)
+    {
+        $ticketModel = new Ticket();
+        $userModel = new User();
+        // // Find the ticket by its ID
+        $ticket = $ticketModel->find($ticketId);
+        $user = $userModel->getUserById($ticket['user_id']);
+
+        // // Check if the ticket exists
+        // if (!$ticket) {
+        //     // Ticket not found
+        //     return redirect()->to('/tickets')->with('error', 'Ticket not found');
+        // }
+
+        // $ticket = [
+        //     [
+        //         'author_name' => 'John Doe',
+        //         'message' => 'I am unable to log in. It gives an error when I try to submit my credentials.',
+        //         'created_at' => '2024-11-01 10:30:00',
+        //         'avatar_url' => 'path_to_avatar1.jpg'
+        //     ],
+        //     [
+        //         'author_name' => 'Support Team',
+        //         'message' => 'Thank you for reaching out. We are looking into the issue and will get back to you shortly.',
+        //         'created_at' => '2024-11-01 11:00:00',
+        //         'avatar_url' => 'path_to_avatar2.jpg'
+        //     ]
+        // ];
+        
+
+        // Pass the ticket data to the view
+        return view('tickets/single_ticket', ['ticket' => $ticket, 'user' => $user]);
     }
 }
