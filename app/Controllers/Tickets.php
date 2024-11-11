@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Ticket;
+use App\Models\TicketResponse;
 use App\Models\User;
 
 class Tickets extends BaseController
@@ -44,12 +45,12 @@ class Tickets extends BaseController
 
         // Retrieve all tickets from the database (you can modify the query if needed)
         $tickets = $ticketModel->orderBy('created_at', 'asc')->findAll();  // You can add conditions like ->where('user_id', $userId) if you want to filter by user
-        
+
 
         return view('tickets/view_tickets', ['tickets' => $tickets]);
     }
 
-    public function NewTicket(): string 
+    public function NewTicket(): string
     {
         return view("tickets/new_ticket");
     }
@@ -76,7 +77,7 @@ class Tickets extends BaseController
         if ($attachment->isValid() && !$attachment->hasMoved()) {
             // Set the upload path
             $attachmentPath = 'uploads/tickets/' . $attachment->getName();
-            
+
             // Move the file to the desired location
             $attachment->move(WRITEPATH . 'uploads/tickets', $attachment->getName());
         }
@@ -107,9 +108,14 @@ class Tickets extends BaseController
     {
         $ticketModel = new Ticket();
         $userModel = new User();
+        $ticketResponse = new TicketResponse();
         // // Find the ticket by its ID
         $ticket = $ticketModel->find($ticketId);
         $user = $userModel->getUserById($ticket['user_id']);
+
+        // Fetch all responses for the specific ticket
+        // $responses = $ticketResponse->where('ticket_id', $ticketId)->findAll();
+        $responses = $ticketResponse->getResponsesWithUser($ticketId);
 
         // // Check if the ticket exists
         // if (!$ticket) {
@@ -131,9 +137,38 @@ class Tickets extends BaseController
         //         'avatar_url' => 'path_to_avatar2.jpg'
         //     ]
         // ];
-        
+
 
         // Pass the ticket data to the view
-        return view('tickets/single_ticket', ['ticket' => $ticket, 'user' => $user]);
+        return view('tickets/single_ticket', ['ticket' => $ticket, 'user' => $user, 'responses' => $responses]);
+    }
+
+
+    public function respond($ticketId)
+    {
+        // Validate the response
+        // $validation = \Config\Services::validation();
+        // $validation->setRules([
+        //     'response' => 'required|string|min_length[10]',
+        // ]);
+
+        // if (!$this->validate($validation->getRules())) {
+        //     // If validation fails, redirect back with errors
+        //     return redirect()->back()->withInput()->with('error', 'پاسخ باید حداقل 10 کاراکتر باشد.');
+        // }
+
+        // Get the current user ID (assuming it's stored in session or similar)
+        $userId = session()->get('user_id');  // Replace this with actual user session retrieval
+
+        // Save the response
+        $ticketResponseModel = new TicketResponse();
+        $ticketResponseModel->insert([
+            'ticket_id' => $ticketId,
+            'user_id'   => $userId,
+            'answer'    => $this->request->getPost('response'),
+        ]);
+
+        // Redirect to the ticket view page with a success message
+        return redirect()->to('/tickets/view/'.$ticketId)->with('success', 'پاسخ شما با موفقیت ارسال شد.');
     }
 }
