@@ -19,6 +19,7 @@
         </div>
         <div class="card-body">
             <p><strong>وضعیت:</strong> <?= esc($ticket['status']) ?></p>
+            <p><strong>بخش:</strong> <?= esc($ticket['department']) ?></p>
             <p><strong>کاربر ایجاد کننده:</strong> <?= esc($user['username']) ?> (<?= esc($user['role']) ?>)</p>
             <p><strong>ایجاد شده در:</strong> <?= esc($ticket['created_at']) ?></p>
             <p><strong>توضیحات:</strong> <?= esc($ticket['question']) ?></p>
