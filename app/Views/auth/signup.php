@@ -26,9 +26,10 @@
             <div class="mb-3">
                 <label for="role" class="form-label">نقش کاربری</label>
                 <select class="form-select" id="role" name="role" required>
-                    <option value="user">کاربر</option>
-                    <option value="admin">مدیر</option>
-                    <option value="support">پشتیبانی</option>
+                    <option value="مشتری">مشتری</option>
+                    <option value="مدیر">مدیر</option>
+                    <option value="پشتیبان فنی">پشتیبان فنی</option>
+                    <option value="فروش">فروش</option>
                 </select>
             </div>
 

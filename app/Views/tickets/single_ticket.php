@@ -14,7 +14,7 @@
         </div>
         <div class="card-body">
             <p><strong>وضعیت:</strong> <?= esc($ticket['status']) ?></p>
-            <p><strong>کاربر ایجاد کننده:</strong> <?= esc($user['username']) ?></p>
+            <p><strong>کاربر ایجاد کننده:</strong> <?= esc($user['username']) ?> (<?= esc($user['role']) ?>)</p>
             <p><strong>ایجاد شده در:</strong> <?= esc($ticket['created_at']) ?></p>
             <p><strong>توضیحات:</strong> <?= esc($ticket['question']) ?></p>
         </div>
@@ -32,7 +32,7 @@
                     <div class="media mb-3">
                         <div class="media-body">
                             <div class="bg-light p-3 rounded">
-                                <p><strong><?= esc($response['username']) ?>:</strong> <?= esc($response['answer']) ?></p>
+                                <p><strong><?= esc($response['username']) ?> (<?= esc($response['role']) ?>):</strong> <?= esc($response['answer']) ?></p>
                                 <small class="text-muted"><?= esc($response['created_at']) ?></small>
                             </div>
                         </div>
