@@ -1,0 +1,215 @@
+body {
+    background-color: #f4f7fc;
+    font-family: 'Segoe UI';
+    direction: rtl;
+}
+
+/* Background and font settings for the header */
+header {
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1.1em;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #007BFF;
+    transform: translateY(-3px);
+}
+
+/* Make the design responsive for mobile screens */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 1em;
+    }
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #00408a;
+    border-color: #00408a;
+}
+
+.text-center {
+    font-size: 14px;
+    color: #777;
+}
+
+.text-center a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Container for the ticket list */
+.ticket-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Ticket list */
+.ticket-list {
+    list-style: none;
+    padding: 0;
+}
+.tickets-view-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Ticket item styling */
+.ticket-item {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ticket-item:hover {
+    transform: scale(1.02);
+}
+
+.ticket-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.ticket-title-status-wrap{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.ticket-status {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.ticket-status.open {
+    background-color: #f7b731;
+    color: #fff;
+}
+
+.ticket-status.closed {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.ticket-date {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .ticket-container {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .ticket-item {
+        padding: 12px;
+    }
+}
+
+
